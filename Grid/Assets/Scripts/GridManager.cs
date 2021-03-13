@@ -35,8 +35,15 @@ public class GridManager : MonoBehaviour
     {
         int randNum = Random.Range(0, 9);
         int RandNum2 = Random.Range(0, 9);
-        Instantiate(lionPrefab, new Vector3 (bottomLeftCoords.x + scale * randNum, bottomLeftCoords.y, bottomLeftCoords.z + scale * RandNum2), Quaternion.identity);
-        Instantiate(chickenPrefab, new Vector3(bottomLeftCoords.x + scale * RandNum2, bottomLeftCoords.y, bottomLeftCoords.z + scale * randNum), Quaternion.identity);
+        GameObject lion = Instantiate(lionPrefab, new Vector3 (bottomLeftCoords.x + scale * randNum, bottomLeftCoords.y, bottomLeftCoords.z + scale * RandNum2), Quaternion.identity);
+        GameObject chicken = Instantiate(chickenPrefab, new Vector3(bottomLeftCoords.x + scale * RandNum2, bottomLeftCoords.y, bottomLeftCoords.z + scale * randNum), Quaternion.identity);
+
+        lion.GetComponent<LionManager>().xPos = (int)(bottomLeftCoords.x + scale * randNum);
+        lion.GetComponent<LionManager>().yPos = (int)(bottomLeftCoords.z + scale * RandNum2);
+        chicken.GetComponent<ChickenManager>().xPos = (int)(bottomLeftCoords.x + scale * RandNum2);
+        chicken.GetComponent<ChickenManager>().yPos = (int)(bottomLeftCoords.z + scale * randNum);
+
+
     }
 
     // Update is called once per frame
@@ -56,6 +63,7 @@ public class GridManager : MonoBehaviour
                 obj.transform.SetParent(gameObject.transform);
                 obj.GetComponent<TileStat>().xPos = i;
                 obj.GetComponent<TileStat>().yPos = j;
+   
 
                 gridArray[i, j] = obj;
             }

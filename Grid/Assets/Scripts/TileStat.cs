@@ -6,7 +6,6 @@ using UnityEngine;
 public enum TileType { Grass, Dirt, Water }
 public class TileStat : MonoBehaviour
 {
-    public int visited = -1;
     public int xPos = 0;
     public int yPos = 0;
 

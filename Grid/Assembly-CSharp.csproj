@@ -58,6 +58,8 @@
     <Compile Include="Assets\Scripts\GridManager.cs" />
     <Compile Include="Assets\Scripts\TileStat.cs" />
     <Compile Include="Assets\VoxelAnimals\Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\ChickenManager.cs" />
+    <Compile Include="Assets\Scripts\LionManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
