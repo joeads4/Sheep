@@ -10,6 +10,9 @@ public class GridManager : MonoBehaviour
     public int scale = 1;
 
     public GameObject tilePrefab;
+    public GameObject lionPrefab;
+    public GameObject chickenPrefab;
+
     public Vector3 bottomLeftCoords = new Vector3(0, 0, 0);
 
     [SerializeField]
@@ -30,7 +33,10 @@ public class GridManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        int randNum = Random.Range(0, 9);
+        int RandNum2 = Random.Range(0, 9);
+        Instantiate(lionPrefab, new Vector3 (bottomLeftCoords.x + scale * randNum, bottomLeftCoords.y, bottomLeftCoords.z + scale * RandNum2), Quaternion.identity);
+        Instantiate(chickenPrefab, new Vector3(bottomLeftCoords.x + scale * RandNum2, bottomLeftCoords.y, bottomLeftCoords.z + scale * randNum), Quaternion.identity);
     }
 
     // Update is called once per frame
