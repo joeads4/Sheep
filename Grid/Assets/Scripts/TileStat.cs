@@ -8,6 +8,8 @@ public class TileStat : MonoBehaviour
 {
     public int xPos = 0;
     public int yPos = 0;
+    //int for node cost
+    //int for presumed cost (set this one to infinity, like fog of war)
 
     public Material[] materials = new Material[3];
     public Material currentMaterial;
@@ -15,6 +17,9 @@ public class TileStat : MonoBehaviour
     [SerializeField]
     
     public TileType currentType;
+
+    //terrain modifier for enum types
+    //grass is lowest cost?
 
     // Start is called before the first frame update
     void Start()
